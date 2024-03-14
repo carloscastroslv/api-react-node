@@ -29,11 +29,26 @@ const User = mongoose.model('User', {
   email: String,
 });
 
+const Products = mongoose.model('Products', {
+  descricao: String,
+  quant: Number,
+  preco: Number,
+});
+
 // Endpoint para obter todos os usuários
 app.get('/users', async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.get('/products', async (req, res) => {
+  try {
+    const products = await Products.find();
+    res.json(products);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -50,6 +65,22 @@ app.post('/users', async (req, res) => {
       const newUser = new User({ name, email });
       await newUser.save();
       res.status(201).json(newUser);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  });
+
+  app.post('/products', async (req, res) => {
+    const { descricao, quant, preco } = req.body;
+  
+    if (!descricao || !quant || !preco) {
+      return res.status(400).json({ message: 'Nome, email e preco são obrigatórios' });
+    }
+  
+    try {
+      const newProduct = new Products({ descricao, quant, preco });
+      await newProduct.save();
+      res.status(201).json(newProduct);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
