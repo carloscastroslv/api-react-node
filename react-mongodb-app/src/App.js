@@ -7,7 +7,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('http://192.168.18.6:5000/users')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(err => console.error('Error fetching data: ', err));
@@ -16,13 +16,16 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Usuários</h1>
-      <ul>
-        {users.map(user => (
-          <li key={user._id}>
-            <strong>Nome:</strong> {user.name}, <strong>Email:</strong> {user.email}
-          </li>
-        ))}
-      </ul>
+      <div className='lista'>
+        <ul>
+          {users.map(user => (
+            <li key={user._id}>
+              <strong>Nome:</strong> {user.name}, <strong><br/>Email:</strong> {user.email}
+            </li>
+          ))}
+        </ul>
+      </div>
+      
     </div>
   );
 }

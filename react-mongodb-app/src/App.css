@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+li {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+ul li {
+  list-style: none;  
+}
+
+.lista {
+  background-color: white;
+  width: auto;
+  height: 550px;
+  padding-top: 10px;
+  color: black;
+}
+
+body {
+  background-color: blue;
+  color: white;
+}
