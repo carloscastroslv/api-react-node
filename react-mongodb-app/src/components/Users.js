@@ -14,11 +14,12 @@ function User() {
   
     return (
       <div className="App">
-        <h1>Lista de Usuários</h1>
+        <h1 className='usuario'>Lista de Usuários</h1>
         <div className='lista'>
           <ul>
             {users.map(user => (
               <li key={user._id}>
+                {/* <strong>Id: {user._id}, </strong><br /> */}
                 <strong>Nome:</strong> {user.name}, <strong><br/>Email:</strong> {user.email}
               </li>
             ))}

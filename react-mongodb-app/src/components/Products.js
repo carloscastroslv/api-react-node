@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './App.css';
+import '../App.css';
 
 function Product() {
   
@@ -20,6 +20,7 @@ function Product() {
             {products.map(product => (
               <li key={product._id}>
                 <strong>Descrição:</strong> {product.descricao}, <strong><br/>Quantidade:</strong> {product.quant}
+                , <strong><br/>Preço:</strong> {product.preco}
               </li>
             ))}
           </ul>
