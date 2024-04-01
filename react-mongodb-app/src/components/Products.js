@@ -13,7 +13,6 @@ function Product() {
 
   return (
     <>
-      <h1 className="titulo">Lista de Produtos</h1>
       <div className="container">
         <div className="lista">
           <ul className="product-list">

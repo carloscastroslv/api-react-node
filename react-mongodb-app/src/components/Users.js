@@ -13,7 +13,6 @@ function User() {
 
   return (
     <>
-      <h1>Lista de Usuários</h1>
       <div className="container">
         <div className="lista">
           <ul className="product-list">
@@ -30,7 +29,7 @@ function User() {
           </ul>
         </div>
       </div>
-    </>
+      </>
   );
 }
 
